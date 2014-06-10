@@ -30,7 +30,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ##  Write a short comment describing this function
 
 ##  This function takes a special Matrix created by makeCacheMatrix as an input and other argument if needed
-##  This function returns the inverse of matrix given as input
+##  It returns the inverse of matrix given as input
 ##  It retrieves the inverse of matrix x from the cache using getInverse
 ##  If the inverse of x already exist in cache, it returns the cached inverse matrix (inv)
 ##  If the inverse of x doesn't exist in cache, it computes it (using solve) and saves it to cache (setInverse) and returns it.
@@ -50,3 +50,21 @@ cacheSolve <- function(x, ...) {
   inv  
   
 }
+
+
+## How to test
+## 
+## > source(cachematrix.R)
+## > testm<-matrix(c(4,0,0,4),nrow=2,ncol=2,byrow = TRUE)
+## > specm<-makeCacheMatrix(testm)
+## > cacheSolve(specm)
+##      [,1] [,2]
+## [1,] 0.25 0.00
+## [2,] 0.00 0.25
+## > cacheSolve(specm)
+## getting cached data
+##      [,1] [,2]
+## [1,] 0.25 0.00
+## [2,] 0.00 0.25
+
+
